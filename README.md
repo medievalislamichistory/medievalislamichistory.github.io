@@ -1,2 +1,2 @@
-# medievalislamichistory.github.io
-Website with teaching materials on Medieval Islamic History
+# univie-histR-2020s.github.io
+070184 UE Methodenkurs - DH Methods: Historical Inquiries with R (2020S): Course Materials Website

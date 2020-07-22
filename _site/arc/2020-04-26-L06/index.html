@@ -1,0 +1,169 @@
+<h1 id="goals">Goals:</h1>
+
+<p>Getting to know the basics of working with data: modeling, manipulating</p>
+
+<h1 id="software">Software:</h1>
+
+<ul>
+  <li>R</li>
+  <li>Excel, Google Spreadsheets, or any other alternative</li>
+</ul>
+
+<h1 id="in-class-i-theoretical-and-conceptual">In Class I: <em>Theoretical and Conceptual</em></h1>
+
+<h2 id="ways-of-modeling-data-categorization">Ways of modeling data: Categorization</h2>
+
+<blockquote>
+  <p>“[Modeling is] a continual process of coming to know by manipulating representations.”</p>
+</blockquote>
+
+<ul>
+  <li>Willard McCarty, “Modeling: A Study in Words and Meanings,” in Susan Schreibman, Ray Siemens, and John Unsworth, <em>A New Companion to Digital Humanities</em>, 2nd ed. (Chichester, UK, 2016), <a href="http://www.digitalhumanities.org/companion/">http://www.digitalhumanities.org/companion/</a>.</li>
+</ul>
+
+<p>One of the most common way of modeling data in historical research—joining items into broader categories. Categorization is important because it allows to group items with low frequencies into items with higher frequencies, and through those discern patterns and trends. Additionally, alternative categorizations allow one to test different perspectives on historical data.</p>
+
+<p>The overall process is rather simple in terms of technological implementation, but is quite complex in terms of subject knowledge and specialized expertise is required to make well-informed decisions.</p>
+
+<ul>
+  <li>For example, let’s say we have the following categories: <em>baker</em>, <em>blacksmith</em>, <em>coppersmith</em>, <em>confectioner</em>, and <em>goldsmith</em>.
+    <ul>
+      <li>These can be categorized as <strong>occupations</strong>;</li>
+      <li>Additionally, <em>blacksmith</em>, <em>coppersmith</em>, and <em>goldsmith</em> can also be categorized as <strong>‘metal industry’</strong>, while <em>baker</em> and <em>confectioner</em>, can be categorized as <strong>‘food industry’</strong>;</li>
+      <li>Yet even more, one might want to introduce additional categories, such as <strong>luxury production</strong> to include items like <em>goldsmith</em> and <em>confectioner</em>; and <strong>regular production</strong> for items like <em>baker</em>, <em>blacksmith</em>, <em>coppersmith</em>.</li>
+    </ul>
+  </li>
+  <li>Such categorizations can be created in two different ways, with each having its advantages:
+    <ul>
+      <li>first, one can create them as additional columns. This approach will allow to always have the original—or alternative—classifications at hand, which is helpful for re-thinking classifications and creating alternative ones where items will be reclassified differently, based on a  different set of assumptions about your subject.</li>
+      <li>second, these can be created in separate files, which might be easier as one does not have to stare at existing classifications and therefore will be less influenced by them in making classification decisions.</li>
+    </ul>
+  </li>
+  <li>Additionally, one can use some pre-existing classifications that have already been created in academic literature. These most likely need to be digitized and converted into properly formatted data, as we discussed in the previous lesson.</li>
+</ul>
+
+<h2 id="normalization">Normalization</h2>
+
+<p>This is a rather simple, yet important procedure, which is, on the technical side, very similar to what was described above. In essence, the main goal of normalization is to remove insignificant differences that may hinder analysis.</p>
+
+<ul>
+  <li>Most common examples would be:
+    <ul>
+      <li>bringing information to the same format (e.g., dates, names, etc.)</li>
+      <li>unifying spelling differences</li>
+    </ul>
+  </li>
+</ul>
+
+<p>It is a safe practice to <strong>preserve the initial data</strong>, creating <em>normalized</em> data in separate columns (or tables)</p>
+
+<h2 id="note-proxies-features-abstractions">Note: <em>Proxies</em>, <em>Features</em>, <em>Abstractions</em></h2>
+
+<p>These are the terms that refer to the same idea. The notion of <em>proxies</em> is used in data visualization, that of <em>features</em>—in computer science; that of <em>abstractions</em>—in the humanities.</p>
+
+<p>The main idea behind these terms is that some simple <em>features</em> of an object can act as <em>proxies</em> to some complex phenomena.</p>
+
+<p>For example, Ian Morris uses the size of cities as a proxy to the complexity of social organization. The logic is following: the larger the size of a city, the more complex social, economic and technical organization is required to keep that city functional, therefore is can be used as an indicator of the social complexity.</p>
+
+<p>While <em>proxies</em> are selected from what is available—usually not much, especially when it comes to historical data—as a way to approach something more complex, it may be argued that abstractions are often arrived to from the opposite direction. We start with an object which is available in its complexity and we reduce its complexity to a more manageable form which—we expect—would prepresent a particular aspect of the initial complex object. Most commonly this is applied to texts in a natural language. For example, in <em>stylometry</em> texts are reduced to freqiency lists of most frequent <em>features</em>, which are expected to represent an <em>authorial fingerprint</em>.</p>
+
+<p>The complexity of texts can be reduced in a number of ways: into a list of lemmas (e.g., for topic modeling analysis), frequency lists (e.g., for document distance comparison), syntactic structures, ngrams, etc. This list is never set and researchers can create multiple abstractions depending on their research questions.</p>
+
+<h1 id="in-class-ii-practical">In Class II: <em>Practical</em></h1>
+
+<p>Data for the practical session and homework: <a href="../../files/Bosker_Data.zip">Bosker_Data.zip</a>. The data is available in open access and is a supplement to a study (see, <em>Reference Materials</em>).</p>
+
+<p>The zipped file includes everything you need for the practical session. Download and unzip (read the article at home!).</p>
+
+<p><strong>Note:</strong> create a notebook and work through the following questions. Group work is encouraged. Please, explain in one or two sentences what you do in each step, so that your work is also human-readable. Please, submit this notebook as your homework. MAke sure to name your file in the following manner: <code class="highlighter-rouge">070184-LXX-HW-YourLastName-YourMatriculationNumber.EXT</code>, where <code class="highlighter-rouge">LXX</code> is the number of the lesson for which you submit homework; <code class="highlighter-rouge">YourLastName</code> is your last name; and <code class="highlighter-rouge">YourMatriculationNumber</code> is your matriculation number; <code class="highlighter-rouge">EXT</code> is the extension of your file — yopu can submit it either as HTML or as a PDF.</p>
+
+<h2 id="section-i">SECTION I.</h2>
+
+<p>Please, provide your answers (2-3 sentences) to the following questions:</p>
+
+<ul>
+  <li>Can you figure which file contains data?</li>
+  <li>In which format is data?</li>
+  <li>How can we load it into R? (Describe and provide working <code class="highlighter-rouge">R code</code>)</li>
+  <li>What is the chronological extent of this data?
+    <ul>
+      <li>[<em>easy-ish</em>] What periods can it be divided into? How can we do that?</li>
+    </ul>
+  </li>
+  <li>How can we introduce the following categories into this data:
+    <ul>
+      <li>[<em>easy</em>] North Africa and Europe?</li>
+      <li>[<em>a bit more complicated</em>] the Austro-Hungarian Empire?</li>
+      <li>[<em>a tad tricky</em>] Christiandom and Islamdom?</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="section-ii">SECTION II</h2>
+
+<p>Please, provide your answers as working <code class="highlighter-rouge">R code</code> and a couple of sentences to describe how you approach (2-3 sentences) the following problems:</p>
+
+<ul>
+  <li>What is the chronological extent of this data?
+    <ul>
+      <li>[<em>easy-ish</em>] What periods can it be divided into? How can we do that?
+        <ul>
+          <li>Can you generate a cumulative graph of population over time, divided into these periods? (<em>Hint:</em> there should be one line for one period and another for another, etc.)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>How can we introduce the following categories into this data:
+    <ul>
+      <li>[<em>easy</em>] North Africa and Europe?
+        <ul>
+          <li>Construct comparative graphs of population in North Africa and Europe (similar to what you did with the Morris dataset). Here you will need to sum up population!</li>
+        </ul>
+      </li>
+      <li>[<em>a bit more complicated</em>] the Austro-Hungarian Empire?
+        <ul>
+          <li>When did the Empire had the largest number of cities (based on the data set)?</li>
+          <li>When was its population at the highest?</li>
+        </ul>
+      </li>
+      <li>[<em>a tad tricky</em>] Christiandom and Islamdom?
+        <ul>
+          <li>What are the largest cities of Islamdom for each reported period?</li>
+          <li>What are the largest western cities of Islamdom between 1000 and 1500 CE?</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="reference-materials">Reference Materials</h1>
+
+<ul>
+  <li>Bosker, Maarten, Eltjo Buringh, and Jan Luiten van Zanden. 2012. “From Baghdad to London: Unraveling Urban Development in Europe, the Middle East, and North Africa, 800–1800.” <em>The Review of Economics and Statistics</em> 95 (4): 1418–37. <a href="https://doi.org/10.1162/REST_a_00284">https://doi.org/10.1162/REST_a_00284</a>.</li>
+  <li>Bosker, Maarten, Eltjo Buringh, and Jan Luiten Van Zanden. 2014. “Replication Data for: From Baghdad to London: Unraveling Urban Development in Europe, the Middle East, and North Africa, 800-1800.” <em>Harvard Dataverse</em>. <a href="https://doi.org/10.7910/DVN/24747">https://doi.org/10.7910/DVN/24747</a>.</li>
+</ul>
+
+<h2 id="additional-readings">Additional Readings</h2>
+
+<ul>
+  <li>Moretti, Franco. 2007. <em>Graphs, Maps, Trees: Abstract Models for Literary History</em>. London - New York: Verso.</li>
+  <li>Moretti, Franco. 2013. <em>Distant Reading.</em> London ; New York: Verso.</li>
+  <li>Romanov, Maxim G. 2017. “Algorithmic Analysis of Medieval Arabic Biographical Collections.” <em>Speculum</em> 92 (S1): S226–46. <a href="https://doi.org/10.1086/693970">https://doi.org/10.1086/693970</a>.</li>
+</ul>
+
+<h1 id="homework">Homework:</h1>
+
+<ul>
+  <li>Finish the practical part and email your notebooks; submit as described below.</li>
+</ul>
+
+<h2 id="submitting-homework">Submitting homework:</h2>
+
+<ul>
+  <li>Homework assignment must be submitted by the beginning of the next class;</li>
+  <li>Email your homework to the instructor as attachments.
+    <ul>
+      <li>In the subject of your email, please, add the following: <code class="highlighter-rouge">070184-LXX-HW-YourLastName-YourMatriculationNumber</code>, where <code class="highlighter-rouge">LXX</code> is the numnber of the lesson for which you submit homework; <code class="highlighter-rouge">YourLastName</code> is your last name; and <code class="highlighter-rouge">YourMatriculationNumber</code> is your matriculation number.</li>
+    </ul>
+  </li>
+</ul>

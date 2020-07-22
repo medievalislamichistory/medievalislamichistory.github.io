@@ -1,0 +1,138 @@
+<h1 id="goals">Goals:</h1>
+
+<ul>
+  <li>Install R and R Studio and start working with them
+    <ul>
+      <li>R <a href="https://www.r-project.org/">https://www.r-project.org/</a></li>
+      <li>R Studio <a href="https://www.rstudio.com/">https://www.rstudio.com/</a></li>
+    </ul>
+  </li>
+  <li>Get to know R Notebooks (R markdown)</li>
+</ul>
+
+<h1 id="software">Software:</h1>
+
+<ul>
+  <li>R <a href="https://www.r-project.org/">https://www.r-project.org/</a></li>
+  <li>R Studio <a href="https://www.rstudio.com/">https://www.rstudio.com/</a></li>
+</ul>
+
+<h1 id="class">Class:</h1>
+
+<ul>
+  <li>R Studio Interface</li>
+  <li>Installing libraries (packages)</li>
+  <li>R Notebook elements: combining prose and code</li>
+  <li>Converting R Notebook into different formats</li>
+</ul>
+
+<h2 id="installing-rmarkdown">Installing <code class="highlighter-rouge">rmarkdown</code></h2>
+
+<p>Instructions here: <a href="https://bookdown.org/yihui/rmarkdown/installation.html">https://bookdown.org/yihui/rmarkdown/installation.html</a></p>
+
+<p>More information on R Markdown:</p>
+
+<ul>
+  <li><a href="https://rmarkdown.rstudio.com/lesson-1.html">https://rmarkdown.rstudio.com/lesson-1.html</a></li>
+  <li><a href="https://bookdown.org/yihui/rmarkdown/">https://bookdown.org/yihui/rmarkdown/</a></li>
+</ul>
+
+<!--
+### YAML header
+
+``` r
+---
+title: "R Notebook Test"
+output:
+  html_document:
+    df_print: paged
+    toc: true
+---
+```
+-->
+
+<h2 id="starting-with-our-first-workbook">Starting with our first workbook:</h2>
+
+<p>Now, download a worksheet file (<a href="../../files/01_worksheets_familiar-with-r.Rmd.zip"><code class="highlighter-rouge">01_worksheets_familiar-with-r.Rmd.zip</code></a>). Unzip it and open in <code class="highlighter-rouge">RStudio</code>. Let’s work through it!</p>
+
+<p><strong>NB:</strong> Original worksheets prepared by Lincoln Mullen, GMU (<a href="https://dh-r.lincolnmullen.com/worksheets.html">https://dh-r.lincolnmullen.com/worksheets.html</a>)</p>
+
+<h2 id="topics-covered">Topics covered:</h2>
+
+<ul>
+  <li>Values</li>
+  <li>Variables</li>
+  <li>Vectors</li>
+  <li>Built-in functions</li>
+  <li>Using the documentation</li>
+  <li>Data frames</li>
+  <li>Installing and loading packages</li>
+  <li>Simple plots</li>
+</ul>
+
+<h1 id="reference-materials">Reference materials:</h1>
+
+<ul>
+  <li><em>R Primer</em> (<a href="https://dh-r.lincolnmullen.com/primer.html">https://dh-r.lincolnmullen.com/primer.html</a>) in: Lincoln A. Mullen, <em>Computational Historical Thinking: With Applications in R (2018–):</em> <a href="https://dh-r.lincolnmullen.com">https://dh-r.lincolnmullen.com</a>.
+    <ul>
+      <li>Use the this primer as a quick introduction to the <code class="highlighter-rouge">R</code> language, or as a reference for the rest of the course.</li>
+    </ul>
+  </li>
+  <li>The original worksheets have been developed by Lincoln Mullen (<a href="https://dh-r.lincolnmullen.com/worksheets.html">https://dh-r.lincolnmullen.com/worksheets.html</a>). The ones used in this class might have undergone some changes and relevant adaptations.</li>
+  <li>Your <code class="highlighter-rouge">R</code> installation may ‘speak’ your main language. It is nice on one hand, but can be quite inconvenient in class, where the main language is English. You may have to do cast some spells to switch <code class="highlighter-rouge">R</code> into English. Possible solutions can be found here: <a href="https://stackoverflow.com/questions/13575180/how-to-change-language-settings-in-r/">https://stackoverflow.com/questions/13575180/how-to-change-language-settings-in-r/</a></li>
+</ul>
+
+<h1 id="homework">Homework:</h1>
+
+<ul>
+  <li>Complete the worksheet <em>Getting familiar with R</em>.</li>
+  <li>Generate the results into HTML or PDF (PDF is a little bit trickier).</li>
+  <li>Submit your homework as described below.</li>
+</ul>
+
+<h1 id="common-issues-with-homework">Common issues with homework:</h1>
+
+<h2 id="tracing-errors">Tracing errors</h2>
+
+<p>Errors happen all the time. You will run into errors when you run your code. You will run into error messages when “knitting” your document — as a result, your document will not be generated. To resolve this:</p>
+
+<ol>
+  <li>It is important to run each chunk of code separately to ensure that they all work. If any of the chunks throw errors, you will not be able to “knit” your documents.</li>
+  <li>When you run into an error, <code class="highlighter-rouge">R Markdown</code> panel (usually in the lower left corner of RStudio interface) will tell you in which line the error occurred. You will need to fix it the same way you would in Step 1.</li>
+</ol>
+
+<h2 id="comments--commenting-out">Comments / Commenting out</h2>
+
+<p>You do not want to constantly keep [re]installing libraries. So, if a library is already installed, you can “comment out” that line.</p>
+
+<pre><code class="language-{r}">install.packages("historydata")
+install.packages("dplyr")
+</code></pre>
+
+<p>For example, the code chunk above should become:</p>
+
+<pre><code class="language-{r}">#install.packages("historydata")
+#install.packages("dplyr")
+</code></pre>
+
+<p>Adding <code class="highlighter-rouge">#</code> in front of a line (or a section of a line) turns it into a <code class="highlighter-rouge">comment</code> and it will not longer be executed.</p>
+
+<h2 id="random-errors">Random errors:</h2>
+
+<p>Think about the following two lines of code. Any issues that you can explain? (You might want to run these lines in R to get some clues)</p>
+
+<ul>
+  <li><code class="highlighter-rouge">`?median`</code></li>
+  <li><code class="highlighter-rouge">variable1 &lt;- DigitalHumanities</code></li>
+</ul>
+
+<h2 id="submitting-homework">Submitting homework:</h2>
+
+<ul>
+  <li>Homework assignment must be submitted by the beginning of the next class;</li>
+  <li>Email your homework to the instructor as attachments.
+    <ul>
+      <li>In the subject of your email, please, add the following: <code class="highlighter-rouge">070184-LXX-HW-YourLastName-YourMatriculationNumber</code>, where <code class="highlighter-rouge">LXX</code> is the numnber of the lesson for which you submit homework; <code class="highlighter-rouge">YourLastName</code> is your last name; and <code class="highlighter-rouge">YourMatriculationNumber</code> is your matriculation number.</li>
+    </ul>
+  </li>
+</ul>

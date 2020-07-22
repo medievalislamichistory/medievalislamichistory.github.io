@@ -1,0 +1,273 @@
+<h1 id="goals">Goals:</h1>
+
+<p>Getting to know the basics of working with data: collecting, creating, organizing.</p>
+
+<h1 id="software--other-required-materials">Software &amp; Other Required Materials</h1>
+
+<ul>
+  <li>R</li>
+  <li>OCR Engines (<a href="https://www.onlineocr.net/">https://www.onlineocr.net/</a>)</li>
+  <li>Excel, Google Spreadsheets, or any other alternative</li>
+</ul>
+
+<h1 id="in-class-i-theoretical-and-conceptual">In Class I: <em>Theoretical and Conceptual</em></h1>
+
+<h2 id="ways-of-obtaining-data">Ways of obtaining data</h2>
+
+<ol>
+  <li>Reusing already produced data
+    <ul>
+      <li>One may require to mold data into a more fitting structure.</li>
+    </ul>
+  </li>
+  <li>Creating one’s own dataset</li>
+  <li>Digitizing data from printed and/or hand-written sources</li>
+</ol>
+
+<h2 id="main-format">Main format</h2>
+
+<ul>
+  <li>Relational databases or Tables/Spreadsheets (<em>tabular data</em>)?
+    <ul>
+      <li>Tabular format: tables; spreadsheets; CSV/TSV files.</li>
+    </ul>
+  </li>
+  <li><em>Unique identifiers</em>:
+    <ul>
+      <li>tables with different data can be connected via <em>unique identifiers</em></li>
+      <li><strong>Note:</strong> A relational database (rDB) is a collection of interconnected tables. Tables in an rDB are connected with each other via <em>unique identifiers</em> which are usually automatically created by the database itself when new data is added.</li>
+      <li>One can maintain interconnected tables without creating a rDB: <em>Open Linked Data</em>
+        <ul>
+          <li><strong>Example</strong>: Table of the growth of cities. One table includes information on population over time; Another table includes coordinates of the cities from the dataset. It is more efficient and practical (reducing error rate from typos) to work on these tables separately, and connect them via unique identifiers of cities which are used in both tables.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="note-on-the-csvtsv-format">Note on the <code class="highlighter-rouge">CSV</code>/<code class="highlighter-rouge">TSV</code> format</h3>
+
+<p><code class="highlighter-rouge">CSV</code> stands for <em>comma-separated values</em>; <code class="highlighter-rouge">TSV</code> — for <em>tab-separated values</em>.</p>
+
+<p>Below is an examples of a CSV format. Here, the first line is the <em>header</em>, which provides the names of columns; each line is a row, while columns are separated with <code class="highlighter-rouge">,</code> commas.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">city</span><span class="p">,</span><span class="n">growth_from_2000_to_2013</span><span class="p">,</span><span class="n">latitude</span><span class="p">,</span><span class="n">longitude</span><span class="p">,</span><span class="n">population</span><span class="p">,</span><span class="n">rank</span><span class="p">,</span><span class="n">state</span>
+<span class="n">New</span> <span class="n">York</span><span class="p">,</span><span class="m">4.8</span><span class="p">%,</span><span class="m">40.7127837</span><span class="p">,-</span><span class="m">74.0059413</span><span class="p">,</span><span class="m">8405837</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="n">New</span> <span class="n">York</span>
+<span class="n">Los</span> <span class="n">Angeles</span><span class="p">,</span><span class="m">4.8</span><span class="p">%,</span><span class="m">34.0522342</span><span class="p">,-</span><span class="m">118.2436849</span><span class="p">,</span><span class="m">3884307</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="n">California</span>
+<span class="n">Chicago</span><span class="p">,-</span><span class="m">6.1</span><span class="p">%,</span><span class="m">41.8781136</span><span class="p">,-</span><span class="m">87.6297982</span><span class="p">,</span><span class="m">2718782</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="n">Illinois</span>
+<span class="n">Houston</span><span class="p">,</span><span class="m">11.0</span><span class="p">%,</span><span class="m">29.7604267</span><span class="p">,-</span><span class="m">95.3698028</span><span class="p">,</span><span class="m">2195914</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="n">Texas</span>
+<span class="n">Philadelphia</span><span class="p">,</span><span class="m">2.6</span><span class="p">%,</span><span class="m">39.9525839</span><span class="p">,-</span><span class="m">75.1652215</span><span class="p">,</span><span class="m">1553165</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="n">Pennsylvania</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">TSV</code> is a better option than a <code class="highlighter-rouge">CSV</code>, since TAB characters (<code class="highlighter-rouge">\t</code>) are very unlikely to appear in values.</p>
+
+<p>Neither <code class="highlighter-rouge">TSV</code> not <code class="highlighter-rouge">CSV</code> are good for preserving <em>new line characters</em> (<code class="highlighter-rouge">\n</code>)—or, in other words, text split into multiple lines/paragraphs. As a workaround, one can convert <code class="highlighter-rouge">\n</code> into some unlikely-to-occur character combination (for example, <code class="highlighter-rouge">;;;</code>), which would be easy to restore into <code class="highlighter-rouge">\n</code> later, if necessary.</p>
+
+<h2 id="basic-principles-of-organizing-data-tidy-data">Basic principles of organizing data: <em>Tidy Data</em></h2>
+
+<h3 id="tidy-data">Tidy Data</h3>
+
+<ul>
+  <li>Each variable is in its own column</li>
+  <li>Each observation is in its own row</li>
+  <li>Each value is in its own cell</li>
+</ul>
+
+<h3 id="clean-data">Clean Data</h3>
+
+<ul>
+  <li>Column names and row names are easy to use and informative. In general, it is a good practice to avoid <code class="highlighter-rouge">spaces</code> and special characters.
+    <ul>
+      <li>Good example: <code class="highlighter-rouge">western_cities</code></li>
+      <li>Alternative good example: <code class="highlighter-rouge">WesternCities</code></li>
+      <li>Bad example: <code class="highlighter-rouge">Western Cities (only the largest)</code></li>
+    </ul>
+  </li>
+  <li>Obvious mistakes in the data have been removed
+    <ul>
+      <li>Date format: <code class="highlighter-rouge">YYYY-MM-DD</code> is the most reliable format. Any thoughts why?</li>
+      <li>There should be no empty <code class="highlighter-rouge">cells</code>:
+        <ul>
+          <li>If you have them, it might be that your data is not organized properly.</li>
+          <li>If your data is organized properly, <code class="highlighter-rouge">NA</code> must be used as an explicit indication that data point is not available.</li>
+        </ul>
+      </li>
+      <li>Each cell must contain only one piece of data.</li>
+    </ul>
+  </li>
+  <li>Variable values must be internally consistent
+    <ul>
+      <li>Be consistent in coding your values: <code class="highlighter-rouge">M</code> and <code class="highlighter-rouge">man</code> are different values computationally, but may be the same in the dataset;</li>
+      <li>Keep track of your categories: a document where all codes used in the data set are explained.</li>
+    </ul>
+  </li>
+  <li>Preserve original values
+    <ul>
+      <li>If you are working with a historical dataset, it might be inconsistent.
+        <ul>
+          <li>For example, distances between cities are given in different formats: days of travel, miles, <em>farsaḫ</em>s/parasangs, etc.).</li>
+          <li>Instead of replacing original values, it is better to create an additional column, where this information will be homogenized according to some principle.</li>
+          <li>Keeping original data will allow to honogenize data in multiple ways (example: <em>day of travel</em>).</li>
+        </ul>
+      </li>
+      <li>Clearly differentiate between the <em>original</em> and <em>modified/modelled</em> values.
+        <ul>
+          <li>The use of suffixes can be convenient: <code class="highlighter-rouge">Distance_Orig</code> <em>vs</em> <code class="highlighter-rouge">Distance_Modified</code>.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Most of editing operations should be performed in software other than R; any spreadsheet program will work, unless it cannot export into CSV/TSV format.
+    <ul>
+      <li>Keep in mind that if you prepare your data in an Excel-like program, rich formatting (like manual highlights, bolds, and italics) is not <em>data</em> and it will be lost, when you export your data into CSV/TSV format.</li>
+      <li><strong>Note:</strong> It might be useful, however, to use rule-based highlighting in order, for example, to identify bad values that need to be fixed.</li>
+    </ul>
+  </li>
+  <li>Back up your data!
+    <ul>
+      <li><a href="http://github.com">http://github.com</a> is a great place for this, plus it allows to work collaboratively.</li>
+      <li><strong>Google spreadsheets</strong> is a decent alternative, but it lacks version control and detailed tracking of changes.</li>
+    </ul>
+  </li>
+</ul>
+
+<!--
+EXTRA NOTES
+
+https://lsru.github.io/tv_course/lecture05_tidyr.html#1
+
+https://arxiv.org/abs/1809.02264
+
+https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html
+http://vita.had.co.nz/papers/tidy-data.html // https://vita.had.co.nz/papers/tidy-data.pdf
+
+Jeff Leek in his book The Elements of Data Analytic Style (Jeff Leek, The Elements of Data Analytic Style, Leanpub, 2015-03-02) summarizes the characteristics of tidy data as the points:[3]
+
+Each variable you measure should be in one column.
+Each different observation of that variable should be in a different row.
+There should be one table for each "kind" of variable.
+If you have multiple tables, they should include a column in the table that allows them to be linked.
+-->
+
+<h1 id="in-class-ii-practical">In Class II: <em>Practical</em></h1>
+
+<h2 id="bulliet-dataset">Bulliet Dataset</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="./img/03/Sample_Page_With_Tabular_Data.png" alt="Sample_Page_With_Tabular_Data" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">The data set shows chrono-geographical distribution of Islamic scholars, according to one of the medieval biographical sources. Source: Bulliet, Richard W. 2009. <em>Cotton, Climate, and Camels in Early Islamic Iran: A Moment in World History</em>. New York: Columbia University Press.</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Digitize a small data set from this <a href="../files/03/Sample_Page_With_Tabular_Data.zip">Sample_Page_With_Tabular_Data.zip</a>.</li>
+  <li>Fix the dataset so that it conforms to the principles of <strong>tidy data</strong>. What should be corrected?</li>
+  <li>Load the data set into R</li>
+  <li>Data for regions is given in relative values. Calculate absolute values. Graph chronological distribution of Islamic scholars from each region both in absolute and relative values.</li>
+</ul>
+
+<h2 id="morris-dataset-the-east-vs-the-west">Morris Dataset: <em>the East Vs. the West</em></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><img src="../../files/Sample_Page_With_Tabular_Data_Morris.png" alt="Sample_Page_With_Tabular_Data_Morris.png" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><em>War-making capacity since 4000 BCE (in social development points).</em> <strong>Data source</strong>: Morris, Ian. 2013. <em>The Measure of Civilization: How Social Development Decides the Fate of Nations</em>. Princeton: Princeton University Press.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="difficulty-easy">Difficulty: Easy</h3>
+
+<ul>
+  <li>Digitize “War-making capacity since 4000 BCE” from this file <a href="../../files/Morris_2013_Combined.pdf">Morris_2013_Combined.pdf</a>.</li>
+  <li>Fix the dataset so that it conforms to the principles of <strong>tidy data</strong>. What should be corrected?</li>
+  <li>Load the data set into R</li>
+  <li>Graph chronological changes in war-making capacities for the East and the West.</li>
+  <li>When the East was in the lead?</li>
+  <li>When the West was in the lead?</li>
+  <li>How can you determine that? (<em>Hint</em>: review logical operators and vector comparison).</li>
+</ul>
+
+<h3 id="difficulty-more-complicated">Difficulty: More complicated</h3>
+
+<ul>
+  <li>Digitize “Maximum Settlement Sizes” from this file <a href="../../files/Morris_2013_Combined.pdf">Morris_2013_Combined.pdf</a>.</li>
+  <li>Fix the dataset so that it conforms to the principles of <strong>tidy data</strong>. What should be corrected?</li>
+  <li>The datasets for the East and the West are separate. What would be your strategies to combine them?</li>
+  <li>Graph chronological changes in war-making capacities for the East and the West.</li>
+  <li>When the East was in the lead? What were the most prominent settlements?</li>
+  <li>When the West was in the lead? What were the most prominent settlements?</li>
+  <li>How can you determine that? (<em>Hint</em>: review logical operators and vector comparison).</li>
+</ul>
+
+<!--
+
+Morris_2013_Combined_Raster.pdf
+
+Morris 2013 - The measure of civilization - War Making Capacity - Both.pdf
+Morris 2013 - The measure of civilization - Energy Capture - East.pdf
+Morris 2013 - The measure of civilization - Energy Capture - West.pdf
+Morris 2013 - The measure of civilization - Information Technology Scores - Both.pdf
+Morris 2013 - The measure of civilization - Maximum Settlement Sizes - East.pdf
+Morris 2013 - The measure of civilization - Maximum Settlement Sizes - West.pdf
+Morris 2013 - The measure of civilization - Social Development Score - East.pdf
+Morris 2013 - The measure of civilization - Social Development Score - West.pdf
+-->
+
+<h1 id="reference-materials">Reference Materials:</h1>
+
+<ul>
+  <li>Wickham, Hadley. 2014. “Tidy Data.” <em>Journal of Statistical Software 59 (10)</em>. <a href="https://doi.org/10.18637/jss.v059.i10">https://doi.org/10.18637/jss.v059.i10</a>. (The article in open access)
+    <ul>
+      <li>Check these slides: A. Ginolhac, E. Koncina, R. Krause. <em>Principles of Tidy Data: tidyr</em> <a href="https://lsru.github.io/tv_course/lecture05_tidyr.html">https://lsru.github.io/tv_course/lecture05_tidyr.html</a> (Also check their other lectures/slides: )</li>
+    </ul>
+  </li>
+  <li>Broman, Karl W., and Kara H. Woo. 2018. “Data Organization in Spreadsheets.” <em>The American Statistician</em> 72 (1): 2–10. <a href="https://doi.org/10.1080/00031305.2017.1375989">https://doi.org/10.1080/00031305.2017.1375989</a>.</li>
+</ul>
+
+<h2 id="additional">Additional</h2>
+
+<ul>
+  <li>Morris, Ian. 2013. <em>The Measure of Civilization: How Social Development Decides the Fate of Nations</em>. Princeton: Princeton University Press.
+    <ul>
+      <li><strong>Note:</strong> This book is a methodological companion to: Morris, Ian. 2010. <em>Why the West Rules—for Now: The Patterns of History, and What They Reveal about the Future.</em> New York: Farrar, Straus and Giroux.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="additional-readings">Additional Readings</h2>
+
+<ul>
+  <li>Wickham, Hadley. 2014. “Tidy Data.” <em>Journal of Statistical Software 59 (10)</em>. <a href="https://doi.org/10.18637/jss.v059.i10">https://doi.org/10.18637/jss.v059.i10</a>. (The article in open access)</li>
+</ul>
+
+<h1 id="homework">Homework:</h1>
+
+<ul>
+  <li>Finish the assignment started in class; email report (ideally, as a PDF, since now it will include graphs).</li>
+  <li>Find your own small data set published in a book or an article; digitize it using strategies discussed in class; run some analytical tasks (anything from what you have learned so far); create a report.</li>
+  <li>Email both reports.</li>
+</ul>
+
+<h2 id="submitting-homework">Submitting homework:</h2>
+
+<ul>
+  <li>Homework assignment must be submitted by the beginning of the next class;</li>
+  <li>Email your homework to the instructor as attachments.
+    <ul>
+      <li>In the subject of your email, please, add the following: <code class="highlighter-rouge">070184-LXX-HW-YourLastName-YourMatriculationNumber</code>, where <code class="highlighter-rouge">LXX</code> is the numnber of the lesson for which you submit homework; <code class="highlighter-rouge">YourLastName</code> is your last name; and <code class="highlighter-rouge">YourMatriculationNumber</code> is your matriculation number.</li>
+    </ul>
+  </li>
+</ul>
