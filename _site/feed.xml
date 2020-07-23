@@ -5,8 +5,8 @@
     <description>Alison M Vacca, UT</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 22 Jul 2020 19:59:09 +0200</pubDate>
-    <lastBuildDate>Wed, 22 Jul 2020 19:59:09 +0200</lastBuildDate>
+    <pubDate>Thu, 23 Jul 2020 09:09:09 +0200</pubDate>
+    <lastBuildDate>Thu, 23 Jul 2020 09:09:09 +0200</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -170,7 +170,7 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;The World according to the Šāhnāme-ye Abū Manṣūrī&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -185,53 +185,80 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Georgian-Sasanian Coinage&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;!--
-## Georgian-Sasanian Coinage
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;../../files/sasanians/image016.png&quot; alt=&quot;image&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;../../files/sasanians/image018.png&quot; alt=&quot;image&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
-|![image](../../files/sasanians/image016.png)|
-|:-:|
-|| 
+&lt;h2 id=&quot;sasanian-metalwork&quot;&gt;Sasanian Metalwork&lt;/h2&gt;
 
-## Sasanian Metalwork
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;../../files/sasanians/image020.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;../../files/sasanians/image021.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Shapur (II) Plate, 4th cent.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;../../files/sasanians/image022.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Drinking vessel, 4th cent.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
-|![image](../../files/sasanians/image004.jpg)|
-|:-:|
-||  
- 
-## Shapur (II) Plate, 4th cent.
+&lt;h2 id=&quot;sogdian-wall-painting-from-panjikent-5-8th-cent&quot;&gt;Sogdian Wall Painting from Panjikent, 5-8th cent.&lt;/h2&gt;
 
-|![image](../../files/sasanians/image004.jpg)|
-|:-:|
-|| 
-
-## Drinking vessel, 4th cent.
-
-|![image](../../files/sasanians/image004.jpg)|
-|:-:|
-|| 
-
-## Sogdian Wall Painting from Panjikent, 5-8th cent.
-
-|![image](../../files/sasanians/image004.jpg)|
-|:-:|
-||
-
---&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;../../files/sasanians/image023.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 </description>
         <pubDate>Fri, 19 Jun 2020 00:00:00 +0200</pubDate>
         <link>http://localhost:4000/2020/Week01/</link>
         <guid isPermaLink="true">http://localhost:4000/2020/Week01/</guid>
         
-        <category>tag1</category>
+        <category>DYNASTY_Sasanians</category>
         
-        <category>tag2</category>
+        <category>GEO_Iran</category>
         
-        <category>tag3</category>
+        <category>PERIOD_0600s</category>
+        
+        <category>PERIOD_0500s</category>
         
         
         <category>lessons</category>
